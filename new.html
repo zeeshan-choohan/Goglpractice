@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<body>
+<h6 id="name">Name</h6> 
+<h6 id="email">Email</h6> 
+<h6 id="password">Password</h6> 
+<h6 id="role">Role</h6> 
+<table border="4" style="width: 600px;">
+    <tr>
+        <th>S .no</th>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Role</th>
+        <th>View</th>
+    </tr>
+
+</table>
+<br>
+<button id="btn">Add Contact</button> 
+
+
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+
+<script>
+    const firebaseConfig = {
+apiKey: "AIzaSyDX3m399ClfFVaH0OlGGs5U9CTVSksRiUc",
+authDomain: "practice-firebase-8eff3.firebaseapp.com",
+databaseURL: "https://practice-firebase-8eff3-default-rtdb.firebaseio.com",
+projectId: "practice-firebase-8eff3",
+storageBucket: "practice-firebase-8eff3.appspot.com",
+messagingSenderId: "830996582820",
+appId: "1:830996582820:web:2d12d9af6c2b19aa7fb131"
+};
+firebase.initializeApp(firebaseConfig);
+</script>
+<script src="new.js"></script>
+</body>
+</html>

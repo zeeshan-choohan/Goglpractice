@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Practice</title>
+</head>
+<body>
+    <label for="">Email :</label>
+    <input type="email" id="email" placeholder="Enter Email">
+  
+    <br>
+    <label for="">Password :</label>
+    <input type="password" id="password" placeholder="Enter your password">
+    <br>
+    <input type="button" value="Sign up" id="signup">
+    <input type="button" value="Sign in" id="signin">
+
+    <input type="button" name="" id="gsign" value="Gsign">
+    
+    
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+
+    <script>
+        const firebaseConfig = {
+  apiKey: "AIzaSyDX3m399ClfFVaH0OlGGs5U9CTVSksRiUc",
+  authDomain: "practice-firebase-8eff3.firebaseapp.com",
+  databaseURL: "https://practice-firebase-8eff3-default-rtdb.firebaseio.com",
+  projectId: "practice-firebase-8eff3",
+  storageBucket: "practice-firebase-8eff3.appspot.com",
+  messagingSenderId: "830996582820",
+  appId: "1:830996582820:web:2d12d9af6c2b19aa7fb131"
+};
+firebase.initializeApp(firebaseConfig);
+    </script>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
