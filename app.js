@@ -64,10 +64,10 @@ gsign.addEventListener("click",async function(){
     }
     // console.log(obj)
 
-    firebase.database().ref("User/").child(user.uid).once("value", function(snp){
+    firebase.database().ref("User/").child(user.uid).once("value",async function(snp){
       console.log(snp.toJSON)
       if(snp.toJSON == null){
-        firebase.database().ref("User/").child(user.uid).set(obj) 
+      await  firebase.database().ref("User/").child(user.uid).set(obj) 
       }
       else{
         console.log("Pehlay se ha")
