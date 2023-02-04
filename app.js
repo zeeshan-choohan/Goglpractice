@@ -52,7 +52,7 @@ gsign.addEventListener("click",async function(){
   var provider = new firebase.auth.GoogleAuthProvider();
   await firebase.auth()
   .signInWithPopup(provider)
-  .then((res) => {
+  .then(async (res) => {
     // console.log(res.user.displayName)
     // console.log(res.user.email)
     // console.log(res)
@@ -64,9 +64,9 @@ gsign.addEventListener("click",async function(){
     }
     // console.log(obj)
 
-    firebase.database().ref("User/").child(user.uid).once("value",async function(snp){
+   await firebase.database().ref("User/").child(user.uid).once("value",async function(snp){
       console.log(snp.toJSON())
-      if(snp.toJSON == null){
+      if(snp.toJSON() == null){
       await  firebase.database().ref("User/").child(user.uid).set(obj) 
       }
       else{
