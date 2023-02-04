@@ -55,7 +55,7 @@ gsign.addEventListener("click",async function(){
   .then(async (res) => {
     // console.log(res.user.displayName)
     // console.log(res.user.email)
-    // console.log(res)
+    console.log(res.user.uid)
     var user = res.user
     var obj = {
       Name : user.displayName,
@@ -69,9 +69,7 @@ gsign.addEventListener("click",async function(){
       if(snp.toJSON() == null){
       await  firebase.database().ref("User/").child(user.uid).set(obj) 
       }
-      else{
-        console.log("Pehlay se ha")
-      }
+      
     })
 
 
