@@ -51,8 +51,9 @@ gsign.addEventListener("click",function(){
   var provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth()
   .signInWithPopup(provider)
-  .then((result) => {
-    console.log(result)
+  .then((res) => {
+    console.log(res.user.dispalyName)
+
 })
 .catch((err)=>{
   console.log(err.message)
