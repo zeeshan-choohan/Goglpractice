@@ -47,12 +47,34 @@ signin.addEventListener("click",function(){
 
 
 
-gsign.addEventListener("click",function(){
+gsign.addEventListener("click",async function(){
+  event.preventDefault()
   var provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth()
+  await firebase.auth()
   .signInWithPopup(provider)
   .then((res) => {
-    console.log(res.user.dispalyName)
+    // console.log(res.user.displayName)
+    // console.log(res.user.email)
+    // console.log(res)
+    var user = res.user
+    var obj = {
+      Name : user.displayName,
+      email : user.email,
+      uid : user.uid
+    }
+    // console.log(obj)
+
+    firebase.database().ref("User/").child(user.uid).once("value", function(snp){
+      console.log(snp.toJSON)
+      if(snp.toJSON == null){
+        firebase.database().ref("User/").child(user.uid).set(obj) 
+      }
+      else{
+        console.log("Pehlay se ha")
+      }
+    })
+
+
 
 })
 .catch((err)=>{
