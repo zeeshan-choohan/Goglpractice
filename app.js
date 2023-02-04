@@ -52,7 +52,7 @@ gsign.addEventListener("click",function(){
   firebase.auth()
   .signInWithPopup(provider)
   .then((res) => {
-    console.log(res.user.dispalyName)
+    console.log(res.user.displayName)
 
 })
 .catch((err)=>{
